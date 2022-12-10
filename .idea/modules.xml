@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Pycharm_Devops_experts.iml" filepath="$PROJECT_DIR$/.idea/Pycharm_Devops_experts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Python-MySQL/.idea/Python-MySQL.iml" filepath="$PROJECT_DIR$/../Python-MySQL/.idea/Python-MySQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Python-RestApi/.idea/Python-RestApi.iml" filepath="$PROJECT_DIR$/../Python-RestApi/.idea/Python-RestApi.iml" />
+    </modules>
+  </component>
+</project>

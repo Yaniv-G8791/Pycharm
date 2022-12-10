@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+body{
+  background-color: #666;
+  padding: 1px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  background-image: linear-gradient(to right, #eeeee, rgb(255, 122, 89));
+
+}
+
+/* Create two columns/boxes that floats next to each other */
+.data {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+
+}
+
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+
+}
+
+
+/* Style the footer */
+
+footer {
+
+  padding: 10px;
+  text-align: center;
+
+   bottom: 0;
+   width: 100%;
+height:30px
+  font-size: 20px;
+   color: white;
+   display:block;
+   margin:0;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+
+  .data {
+    width: 100%;
+    height: auto;
+  }
+
+</style>
+</head>
+
+<header>
+<H1><B>PySystem Header</B></H1>
+</header>
+<body >
+
+  <nav class="data">
+  <h2 class="Btn" >Select an option:</h2>
+    <ul>
+      <li><button id="Get" class="Btn" onclick="CreateData('Get');">Get User by ID</button></li>
+			  <p id="GetBtn"></p>
+   </ul>
+  </nav>
+
+<footer>
+<B>PySystem Footer</B>
+</footer>
+
+<script type = "text/javascript">  
+function CreateData(e){
+let CurrBtn=e.concat('Btn');
+ var buttons = document.getElementsByClassName('Btn');
+
+let UserInput=0
+let mthd='POST';
+const NoInputName = ["Delete", "Get"];
+if(NoInputName.includes(e)){
+	document.getElementById(CurrBtn).innerHTML  ='<form action="/users/" Id="Form" method = "' + mthd +'"><h2>'+e+ ' User</h2> <p> enter user id <textarea id="UserInput" name=' + e +' rows="1"></textarea>  </br> <table><tr><input class="button" type="button"  onclick="getuserinput('+e+')" value="Submit"></button>&nbsp;&nbsp;&nbsp;&nbsp; </tr><tr> <input class="button" type="button" onclick="window.location.reload()" value="Cancel" /></tr></table></p></form>';
+	buttons[e].style.visibility = "hidden";
+	 								}
+		
+}
+function getuserinput(e){
+document.getElementById("Form").submit();
+
+}
+</script>  
+</body>
+</html>
+
