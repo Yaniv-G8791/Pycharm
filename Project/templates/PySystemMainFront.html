@@ -91,12 +91,13 @@ let UserInput=0
 let mthd='POST';
 const NoInputName = ["Delete", "Get"];
 if(NoInputName.includes(e)){
-	document.getElementById(CurrBtn).innerHTML  ='<form action="/users/" Id="Form" method = "' + mthd +'"><h2>'+e+ ' User</h2> <p> enter user id <textarea id="UserInput" name=' + e +' rows="1"></textarea>  </br> <table><tr><input class="button" type="button"  onclick="getuserinput('+e+')" value="Submit"></button>&nbsp;&nbsp;&nbsp;&nbsp; </tr><tr> <input class="button" type="button" onclick="window.location.reload()" value="Cancel" /></tr></table></p></form>';
+	document.getElementById(CurrBtn).innerHTML  ='<form action="/users/get_user_data/" Id="Form" method = "' + mthd +'"><h2>'+e+ ' User</h2> <p> enter user id <textarea id="UserInput" name=' + e +' rows="1"></textarea>  </br> <table><tr><input class="button" type="button"  onclick="getuserinput('+e+')" value="Submit"></button>&nbsp;&nbsp;&nbsp;&nbsp; </tr><tr> <input class="button" type="button" onclick="window.location.reload()" value="Cancel" /></tr></table></p></form>';
 	buttons[e].style.visibility = "hidden";
 	 								}
 		
 }
 function getuserinput(e){
+document.getElementById("Form").action="/users/get_user_data/"+e.value
 document.getElementById("Form").submit();
 
 }
