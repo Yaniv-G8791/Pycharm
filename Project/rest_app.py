@@ -1,6 +1,9 @@
 import db_connector as db
 from flask import Flask, request
 import config as config
+import os
+import signal
+
 jsoncontent = config.configjson()
 Status = jsoncontent["Status"]
 Reason = jsoncontent["Reason"]
@@ -84,5 +87,9 @@ def user(user_id):
 # accessed via <HOST>:<PORT>/get_random
 # back end
 
+@app.route('/stop_server')
+def stop_server():
+    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    return 'Server stopped'
 
 app.run(host='127.0.0.1', debug=True, port=5000)

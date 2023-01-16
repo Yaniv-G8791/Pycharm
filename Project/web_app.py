@@ -1,6 +1,9 @@
 from flask import Flask, request, render_template, redirect
 import config as config
 import db_connector as db
+import os
+import signal
+
 
 jsoncontent=config.configjson()
 
@@ -64,5 +67,10 @@ def user(user_id):
 def webui():
     if request.method == 'GET':
         return render_template("PySystemMainFront.html")
+
+@app.route('/stop_server')
+def stop_server():
+    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    return 'Server stopped'
 
 app.run(host='127.0.0.1', debug=True, port=5001)
