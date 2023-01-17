@@ -11,11 +11,11 @@ pipeline {
                 bat 'python -m pip install pymysql'
 
             }
-            stage('build') {
-                steps {
-                    bat 'cd Project & python rest_app.py'
+        }
+        stage('build') {
+            steps {
+                bat 'cd Project & python rest_app.py'
 
-                }
             }
         }
     }
