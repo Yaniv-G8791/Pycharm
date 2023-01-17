@@ -8,7 +8,7 @@ git 'https://github.com/Yaniv-G8791/Pycharm/'
 }
 stage('build') {
 steps {
-bat 'python <PYTHON FILE>.py'
+bat 'python rest_app.py'
 }
 }
 }
