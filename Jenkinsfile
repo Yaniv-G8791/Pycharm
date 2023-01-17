@@ -1,6 +1,15 @@
-
-stage('run backend server') {
+pipeline {
+agent any
+stages {
+stage('checkout') {
 steps {
-bat 'start /min python rest_app.py'
+git 'https://github.com/Yaniv-G8791/Pycharm/'
+}
+}
+stage('build') {
+steps {
+bat 'python <PYTHON FILE>.py'
+}
+}
 }
 }
